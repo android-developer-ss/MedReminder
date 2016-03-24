@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:text="sss"
+    android:textSize="20sp"
+    android:background="@drawable/text_background"
+    android:textColor="@android:color/white"
+    android:padding="@dimen/text_view_padding"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:textAlignment="center" />

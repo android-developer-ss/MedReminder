@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nav_drawer_title">
+        <item>"Book Appointment"</item>
+        <item>"Home"</item>
+        <item>"Medicine Reminder"</item>
+        <item>"Scribble Pad"</item>
+        <item>"Upload Images"</item>
+        <item>"Order Medicine"</item>
+        <!--<item>"My Profile"</item>  add it-->
+        <item>"Sign Out"</item>
+    </string-array>
+
+    <string-array name="timings_array">
+        <item>"08:00AM to 08:30AM"</item>
+        <item>"08:30AM to 09:00AM"</item>
+        <item>"09:00AM to 09:30AM"</item>
+        <item>"09:30AM to 10:00AM"</item>
+        <item>"10:00AM to 10:30AM"</item>
+        <item>"10:30AM to 11:00AM"</item>
+        <item>"11:00AM to 11:30AM"</item>
+        <item>"11:30AM to 12:00PM"</item>
+        <item>"12:00PM to 12:30PM"</item>
+        <item>"12:30PM to 01:00PM"</item>
+        <item>"01:00PM to 01:30PM"</item>
+        <item>"01:30AM to 02:00PM"</item>
+        <item>"02:00PM to 02:30PM"</item>
+        <item>"02:30AM to 03:00PM"</item>
+        <item>"03:00PM to 03:30PM"</item>
+        <item>"03:30AM to 04:00PM"</item>
+        <item>"04:00PM to 04:30PM"</item>
+        <item>"04:30AM to 05:00PM"</item>
+        <item>"05:00PM to 05:30PM"</item>
+        <item>"05:30PM to 06:00PM"</item>
+
+    </string-array>
+    <string-array name="book_time">
+        <item>"08:00"</item>
+        <item>"08:30"</item>
+        <item>"09:00"</item>
+        <item>"09:30"</item>
+        <item>"1000"</item>
+        <item>"1030"</item>
+        <item>"1100"</item>
+        <item>"1130"</item>
+        <item>"1200"</item>
+        <item>"1230"</item>
+        <item>"1300"</item>
+        <item>"1330"</item>
+
+        <item>"1400"</item>
+        <item>"1430"</item>
+        <item>"1500"</item>
+        <item>"1530"</item>
+        <item>"1600"</item>
+        <item>"1630"</item>
+        <item>"1700"</item>
+        <item>"1730"</item>
+    </string-array>
+
+    <string-array name="snooze_timing">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
+        <item>"9"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+    </string-array>
+
+    <string-array name="doctor_name">
+        <item>"Dr Smith"</item>
+        <item>"Dr Mistry"</item>
+        <item>"Dr Aikenhead"</item>
+        <item>"Dr Meredith Grey"</item>
+        <item>"Dr. Addison Montgomery"</item>
+
+        <item>"Dr. Miranda Bailey"</item>
+        <item>"Dr. George O'Malley"</item>
+        <item>"Dr. Richard "</item>
+        <item>"Dr. Alex Karev"</item>
+        <item>"Dr. Lexie Grey"</item>
+
+        <item>"Dr. Jackson Avery"</item>
+    </string-array>
+
+    <string-array name="doctor_email">
+        <item>"aaa@gmail.com"</item>
+        <item>"dr_mistry@gmail.com"</item>
+        <item>"dr_aikenhead@gmail.com"</item>
+        <item>"dr_meredith_grey@gmail.com"</item>
+        <item>"dr_addison_montgomery@gmail.com"</item>
+        <item>"dr_miranda_bailey@gmail.com"</item>
+        <item>"dr_george_omalley@gmail.com"</item>
+        <item>"dr_richard@gmail.com"</item>
+        <item>"dr_alex_karev@gmail.com"</item>
+        <item>"dr_lexie_grey@gmail.com"</item>
+        <item>"dr_jackson_averyy@gmail.com"</item>
+    </string-array>
+
+    <string-array name="doctor_speciality">
+        <item>"General"</item>
+        <item>"Physician"</item>
+        <item>"Hematologist"</item>
+        <item>"Neurologist"</item>
+        <item>"Gynaecologist"</item>
+
+        <item>"General Doctor"</item>
+        <item>"Orthopedic"</item>
+        <item>"Dental "</item>
+        <item>"Pediatrician"</item>
+        <item>"Dermatologist"</item>
+
+        <item>"Cardiologist"</item>
+    </string-array>
+    <string-array name="doctor_qualification">
+        <item>"Doctor of Medicine (M.D.)"</item>
+        <item>"Doctor of Jurisprudence (J.D.)"</item>
+        <item>"Doctor of Medical Science (D.M.Sc.)"</item>
+        <item>"Doctor of Neurology (D.N.Sc.)"</item>
+        <item>"Doctor of Gynecology GYN "</item>
+
+        <item>"Doctor of Medicine (M.D.)"</item>
+        <item>"Doctor scientarum – DSc"</item>
+        <item>"Doctor of Dental Medicine (D.M.D.) "</item>
+        <item>"Doctor of Osteopathic Medicine (D.O.)"</item>
+        <item>"Doctor of Jurisprudence (J.D.)"</item>
+
+        <item>"Doctor of Osteopathy (DO)"</item>
+    </string-array>
+    <string-array name="doctor_image">
+        <item>"http://www.straine.com/wp-content/uploads/2015/12/doctor.png"</item>
+        <item>"http://topratedhcg.com/wp-content/uploads/2015/04/doctor-img.png"</item>
+        <item>"http://www.neurologicassociatesofbrevard.com/images/template/doctor.png?nxg_versionuid=published"</item>
+        <item>"http://ichef-1.bbci.co.uk/news/660/media/images/76055000/jpg/_76055361_482566485.jpg"</item>
+        <item>"http://tehachapidoctors.com/wp-content/uploads/2015/10/Tehachapi-Doctor.png"</item>
+
+        <item>"http://youthvoices.net/sites/default/files/image/69776/feb/doctor1.png"</item>
+        <item>"http://globe-views.com/dcim/dreams/doctor/doctor-06.jpg"</item>
+        <item>"http://www.chiropraticiens-montreal.info/wp-content/uploads/2015/12/chiropracteur-montreal.jpg"</item>
+        <item>"http://www.ruralflyingdoc.com/wp-content/uploads/2013/05/Rich-Doctor.jpg"</item>
+        <item>"http://www.retlando.eu/user_files/doctor.png"</item>
+
+        <item>"http://regenorthoclinic.com/wp-content/uploads/2014/09/doctor-1.jpg"</item>
+    </string-array>
+
+    <string-array name="location_name">
+        <item>"Please select Location"</item>
+        <item>"Banglore"</item>
+        <item>"Karnataka"</item>
+        <item>"Mumbai"</item>
+        <item>"Pune"</item>
+        <item>"Goa"</item>
+        <item>"Kolkata"</item>
+        <item>"Pimpri Chinchwad"</item>
+        <item>"Khadki"</item>
+        <item>"Pradhikaran"</item>
+    </string-array>
+
+
+    <!--<string-array name="pref_units_values">-->
+        <!--<item>@string/pref_units_metric</item>-->
+        <!--<item>@string/pref_units_imperial</item>-->
+    <!--</string-array>-->
+</resources>

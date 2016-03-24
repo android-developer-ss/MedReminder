@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MedicineReminder</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="monday_text">Monday</string>
+    <string name="tuesday_text">Tuesday</string>
+    <string name="wednesday_text">Wednesday</string>
+    <string name="thursday_text">Thursday</string>
+    <string name="friday_text">Friday</string>
+    <string name="saturday_text">Saturday</string>
+    <string name="sunday_text">Sunday</string>
+    <string name="repeats_on">Alarm Repeats on every: </string>
+    <string name="none">Alarm does not repeat. </string>
+    <string name="alarm_on">Alarm: ON </string>
+    <string name="alarm_off">Alarm: OFF </string>
+    <string name="title_activity_alarm_notification">AlarmNotification</string>
+
+
+    <string name="take_your_med_text">Please take your medicine: </string>
+    <string name="external_dir">GetSignature</string>
+
+    <string name="doctor_address">3755 E Main St # 110 \n
+(630) 587-6200</string>
+
+    <string name="frag_title_book_appointment">Book Appointment</string>
+    <string name="frag_title_view_doctors">View Available Doctors</string>
+    <string name="frag_title_select_loc">Select Location and Speciality</string>
+
+</resources>

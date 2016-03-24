@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/teal500</item>
+        <item name="colorPrimaryDark">@color/teal900</item>
+        <!--<item name="colorAccent">#FF4081</item>-->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- *************************************************************************************** -->
+    <!-- LAYOUT containing textfield and edittext-->
+    <style name="TextHeaderEntryContainer">
+        <item name="android:background">@color/teal200</item>
+        <item name="android:alpha">0.8</item>
+    </style>
+
+    <!-- Text view styling -->
+    <style name="TextHeader">
+
+        <!-- Edit tet styling-->
+    </style>
+
+    <style name="TextEntry">
+
+    </style>
+    <!-- *************************************************************************************** -->
+    <style name="ButtonStyle">
+
+    </style>
+
+</resources>
