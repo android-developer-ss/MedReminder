@@ -23,7 +23,7 @@ public class MedicineViewAdapter extends RecyclerView.Adapter<MedicineViewAdapte
     MedicineViewAdapterInterface mMedicineViewAdapterInterface;
     String LOG_TAG = "svs_me";
 
-
+//Constructor.
     public MedicineViewAdapter(ArrayList<MedicineViewItems> dataset, Context paramContext,
                                MedicineViewAdapterInterface medicineViewAdapterInterface) {
         dataset_ = dataset;
