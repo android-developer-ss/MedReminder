@@ -12,6 +12,9 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,13 +24,14 @@ import java.util.ArrayList;
  */
 public class FragmentMedicineReminder extends Fragment implements MedicineViewAdapterInterface, View.OnClickListener {
 
-    public String LOG_TAG = "svs_me";
+    public String LOG_TAG = FragmentMedicineReminder.class.getSimpleName();
     public String FRAGMENT_ADD_MED_TAG = "add_med";
     public String mJsonArray;
     public ArrayList<MedicineViewItems> listData;
     private View mRootView;
     private Context mContext;
     private FloatingActionButton fab;
+    private ImageView mBackgroundImage;
     PatientRecordToAddMedInterface patientRecordToAddMedInterface;
 
 
@@ -37,6 +41,24 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
         View rootView = inflater.inflate(R.layout.fragment_medicine_reminder, container, false);
         mRootView = rootView;
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mBackgroundImage = (ImageView) mRootView.findViewById(R.id.med_rem_background);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        startScaleAnimation(mBackgroundImage,true);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        startScaleAnimation(mBackgroundImage,false);
     }
 
     @Override
@@ -112,6 +134,17 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
                 mJsonArray = Utility.getAlarmListArrayListStringFormat(mContext);
                 patientRecordToAddMedInterface.patientRecToAddMedCommunication(mJsonArray);
                 break;
+        }
+    }
+
+
+    public void startScaleAnimation(final ImageView imageView, boolean startAnimation) {
+        if (startAnimation) {
+            if (imageView == null) return;
+            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_in);
+            imageView.startAnimation(anim);
+        }else{
+//            imageView.stop
         }
     }
 }
