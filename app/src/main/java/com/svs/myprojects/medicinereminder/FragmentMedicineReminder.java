@@ -32,6 +32,7 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
     private Context mContext;
     private FloatingActionButton fab;
     private ImageView mBackgroundImage;
+    private Animation mAnimation;
     PatientRecordToAddMedInterface patientRecordToAddMedInterface;
 
 
@@ -52,13 +53,13 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
     @Override
     public void onResume() {
         super.onResume();
-        startScaleAnimation(mBackgroundImage,true);
+        startScaleAnimation(mBackgroundImage, true);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        startScaleAnimation(mBackgroundImage,false);
+        startScaleAnimation(mBackgroundImage, false);
     }
 
     @Override
@@ -94,7 +95,7 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
                 // callback for swipe to dismiss, removing item from data and adapter
 
                 // Remove the alarm from the system.
-                Utility.removeAlarmFromSystem(mContext,listData.get(viewHolder.getAdapterPosition()));
+                Utility.removeAlarmFromSystem(mContext, listData.get(viewHolder.getAdapterPosition()));
                 // Delete the alarm from list view.
                 listData.remove(viewHolder.getAdapterPosition());
                 adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
@@ -138,13 +139,13 @@ public class FragmentMedicineReminder extends Fragment implements MedicineViewAd
     }
 
 
-    public void startScaleAnimation(final ImageView imageView, boolean startAnimation) {
+    private void startScaleAnimation(final ImageView imageView, boolean startAnimation) {
         if (startAnimation) {
             if (imageView == null) return;
-            Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_in);
-            imageView.startAnimation(anim);
-        }else{
-//            imageView.stop
+            mAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_in);
+            imageView.startAnimation(mAnimation);
+        } else {
+            mAnimation.cancel();
         }
     }
 }

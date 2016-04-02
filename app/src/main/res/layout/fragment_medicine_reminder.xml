@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     android:background="@color/teal900"
     android:orientation="vertical">
+    <!-- android:background="@drawable/im_bg_herb1"-->
 
     <ImageView
         android:id="@+id/med_rem_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.6"
-        android:background="@drawable/im_bg_herb1" />
+        android:background="@drawable/im_bg_herb1"
+        android:scaleType="centerCrop"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

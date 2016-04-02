@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -62,6 +65,7 @@ public class Utility {
         editor.putString(Constants.PREF_NAME_ALARM, json);
         editor.commit();
     }
+
     /***********************************************************************************************
      * Convert the Shared Preferences Alarm List stored in JSON Format to arraylist.
      */
@@ -87,14 +91,13 @@ public class Utility {
     }
 
 
-
     public static void setAlarmInDevice(int hourOfDay, int minute, Context context, String message, long alarmId, int day) {
         AlarmManager alarmManager;
         alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent myIntent = new Intent(context, AlarmReceiver.class);
         Bundle bundle = new Bundle();
-        bundle.putString(Constants.MED_NAME_LIST,message);
+        bundle.putString(Constants.MED_NAME_LIST, message);
         bundle.putLong(Constants.ALARM_IDENTIFIER, alarmId); //long timestamp
         bundle.putInt(Constants.ALARM_DAY, day); //Set the day for alarm
 
@@ -119,7 +122,7 @@ public class Utility {
 
         Intent myIntent = new Intent(context, AlarmReceiver.class);
         Bundle bundle = new Bundle();
-        bundle.putString(Constants.MED_NAME_LIST,message);
+        bundle.putString(Constants.MED_NAME_LIST, message);
         bundle.putLong(Constants.ALARM_IDENTIFIER, alarmId); //long timestamp
         bundle.putInt(Constants.ALARM_DAY, day); //Set the day for alarm
         myIntent.putExtra(Constants.ALARM_BUNDLE, bundle);
@@ -128,7 +131,7 @@ public class Utility {
         alarmManager.cancel(pendingIntent);
     }
 
-    public static void removeAlarmFromSystem(Context context, MedicineViewItems medToBeDeleted){
+    public static void removeAlarmFromSystem(Context context, MedicineViewItems medToBeDeleted) {
         // Get the alarm reminder object to be deleted.
         if (medToBeDeleted.isAlarmSetting()) {
             // Check if the alarm was set for the reminder to be deleted. If alarm was set on
@@ -184,6 +187,7 @@ public class Utility {
         return aTime;
 
     }
+
     /***********************************************************************************************
      * Get selected days on the UI. For each day we need to set repeating alarm.
      */
@@ -212,6 +216,7 @@ public class Utility {
         }
         return daysSelected;
     }
+
     public static void setSnoozeAlarm(long mili, Context context, String message) {
         AlarmManager alarmManager;
         alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -225,6 +230,11 @@ public class Utility {
         calendar.set(Calendar.MINUTE, minute);
         calendar.set(Calendar.SECOND, 0);*/
 
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+mili, pendingIntent);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + mili, pendingIntent);
     }
+
+    /***********************************************************************************************
+     * Load and start the animation.
+     */
+
 }

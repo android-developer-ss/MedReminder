@@ -14,9 +14,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TimePicker;
 
@@ -40,11 +43,13 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
     private View mRootView;
     private FloatingActionButton fab;
     private EditText mMedListText;
+    private ImageView mBackgroundImage;
     private CheckBox mMonAlarm, mTueAlarm, mWedAlarm, mThuAlarm, mFriAlarm, mSatAlarm, mSunAlarm;
     private int mHourOfDay, mMinute;
     private long mMillisec;
     private long mAlarmId;
     private int alarmItemNum = -1;
+    private Animation mAnimation;
     ArrayList<MedicineViewItems> sharedPrefMedAlarmArr;
 
 
@@ -79,10 +84,8 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
         mFriAlarm = (CheckBox) rootView.findViewById(R.id.fri_alarm);
         mSatAlarm = (CheckBox) rootView.findViewById(R.id.sat_alarm);
         mSunAlarm = (CheckBox) rootView.findViewById(R.id.sun_alarm);
-
         mSelectTimeButton.setOnClickListener(this);
         mSaveMedButton.setOnClickListener(this);
-
         if (alarmItemNum != -1) {
             setValuesInLayout();
         }
@@ -91,9 +94,27 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
         return rootView;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mBackgroundImage = (ImageView) mRootView.findViewById(R.id.add_med_reminder_background);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        startScaleAnimation(mBackgroundImage,true);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        startScaleAnimation(mBackgroundImage,false);
+    }
+
     /***********************************************************************************************
      * If we clicked to modify the view, then alarmItemNum will have valid position from the
-     * listview. Using this position update the values on ADD MEDICINE screen. Called from onCreate.
+     * list view. Using this position update the values on ADD MEDICINE screen. Called from onCreate.
      */
     public void setValuesInLayout() {
         MedicineViewItems medicineViewItems = sharedPrefMedAlarmArr.get(alarmItemNum);
@@ -155,7 +176,7 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
         if (alarmItemNum != -1) {
             // Get the alarm reminder object to be deleted.
             MedicineViewItems medToBeDeleted = sharedPrefMedAlarmArr.get(alarmItemNum);
-            Utility.removeAlarmFromSystem(mContext,medToBeDeleted);
+            Utility.removeAlarmFromSystem(mContext, medToBeDeleted);
 
             // Remove the previous values of alarm from the shared preferences so that new values can
             // be stored. Works as an update = delete + insert.
@@ -163,7 +184,6 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
             //Toast.makeText(mContext, "alarmItemNum" + alarmItemNum, Toast.LENGTH_LONG).show();
         }
     }
-
 
 
     /***********************************************************************************************
@@ -234,6 +254,16 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
             calendar.set(Calendar.MINUTE, minute);
 
             mMillisec = calendar.getTimeInMillis();
+        }
+    }
+
+    private void startScaleAnimation(final ImageView imageView, boolean startAnimation) {
+        if (startAnimation) {
+            if (imageView == null) return;
+            mAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_in);
+            imageView.startAnimation(mAnimation);
+        } else {
+            mAnimation.cancel();
         }
     }
 }
