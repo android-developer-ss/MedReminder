@@ -36,7 +36,7 @@ import java.util.Calendar;
  */
 public class FragmentAddMedicineReminder extends Fragment implements View.OnClickListener {
 
-    private String LOG_TAG = "svs_me";
+    private String LOG_TAG = FragmentAddMedicineReminder.class.getSimpleName();
     private Button mSelectTimeButton, mSaveMedButton;
     private Context mContext;
     private Switch mAlarmOnOffSwitch;
@@ -46,7 +46,7 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
     private ImageView mBackgroundImage;
     private CheckBox mMonAlarm, mTueAlarm, mWedAlarm, mThuAlarm, mFriAlarm, mSatAlarm, mSunAlarm;
     private int mHourOfDay, mMinute;
-    private long mMillisec;
+    private long mMilliseconds;
     private long mAlarmId;
     private int alarmItemNum = -1;
     private Animation mAnimation;
@@ -196,7 +196,7 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
         medicineViewItems.setId(mAlarmId);
         medicineViewItems.setAlarmSetting(mAlarmOnOffSwitch.isChecked());
         medicineViewItems.setMedicineName(mMedListText.getText().toString());
-        medicineViewItems.setTime(new Time(mMillisec));
+        medicineViewItems.setTime(new Time(mMilliseconds));
         medicineViewItems.setMonAlarmOn(mMonAlarm.isChecked());
         medicineViewItems.setTueAlarmOn(mTueAlarm.isChecked());
         medicineViewItems.setWedAlarmOn(mWedAlarm.isChecked());
@@ -253,7 +253,7 @@ public class FragmentAddMedicineReminder extends Fragment implements View.OnClic
             calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
             calendar.set(Calendar.MINUTE, minute);
 
-            mMillisec = calendar.getTimeInMillis();
+            mMilliseconds = calendar.getTimeInMillis();
         }
     }
 
